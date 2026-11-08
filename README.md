@@ -4,7 +4,7 @@ Proyecto del equipo de Desarrollo de Software IV, Universidad de Costa Rica, Sed
 
 **Integrantes:** David Mora Gómez, Herlin Fabian Chavarria Beita y Vladimir Sancho Venegas.
 
-Esta rama contiene únicamente la base del proyecto. La aplicación de agenda completa se conserva por separado en la carpeta vecina `Codigo Kotlin completo` como referencia. Las funcionalidades se incorporarán mediante las ramas `David`, `Herlin` y `Vladimir`.
+Esta rama contiene únicamente la base del proyecto. La aplicación de agenda completa se conserva por separado en la carpeta `Codigo Kotlin completo` del Escritorio como referencia. Las funcionalidades se incorporarán mediante las ramas `David`, `Herlin` y `Vladimir`.
 
 ## Módulos
 
@@ -36,6 +36,6 @@ En Windows, con JDK 21 seleccionado:
 
 La estructura inicial compiló el 7 de noviembre de 2026 para JVM/escritorio, web (`:webApp:compileKotlinJs`) y Android (`:androidApp:assembleDebug`). El APK de prueba se genera en `androidApp/build/outputs/apk/debug/`.
 
-En el equipo donde se preparó el proyecto, Android Studio está en la carpeta vecina `.tools/android-studio` y el SDK en `.android-sdk`. `local.properties` apunta al SDK y permanece fuera de Git para no imponer esa ruta a los demás integrantes.
+En el equipo donde se preparó el proyecto, Android Studio está en `%LOCALAPPDATA%/KotlinMultiplatform/tools/android-studio` y el SDK en `%LOCALAPPDATA%/KotlinMultiplatform/android-sdk`. `local.properties` apunta al SDK y permanece fuera de Git para no imponer esa ruta a los demás integrantes.
 
 La base procede de la [plantilla oficial Kotlin Multiplatform](https://github.com/Kotlin/KMP-App-Template). El equipo conservará la atribución y licencia Apache 2.0 de la plantilla.
