@@ -22,7 +22,7 @@ En `shared/src/commonMain/kotlin/org/ucr/agenda` están preparadas las carpetas 
 
 - JDK 21.
 - Gradle Wrapper incluido; descarga Gradle y las dependencias Kotlin/Compose al compilar.
-- Para Android: SDK Platform 37.0, Build Tools 37.0.0 y Platform Tools. El SDK puede ubicarse fuera del repositorio y apuntarse desde `local.properties` con `sdk.dir`.
+- Para Android: SDK Platform 37.0, Build Tools y Platform Tools. El SDK puede ubicarse fuera del repositorio y apuntarse desde `local.properties` con `sdk.dir`.
 - Para iOS: macOS y Xcode. No se requiere para la demostración en Windows.
 
 ## Comprobación inicial
@@ -34,6 +34,8 @@ En Windows, con JDK 21 seleccionado:
 .\gradlew.bat :androidApp:assembleDebug
 ```
 
-La primera orden compiló correctamente la estructura inicial el 7 de noviembre de 2026. También compiló `:webApp:compileKotlinJs`. La compilación Android queda pendiente hasta completar la instalación del SDK y aceptar su licencia.
+La estructura inicial compiló el 7 de noviembre de 2026 para JVM/escritorio, web (`:webApp:compileKotlinJs`) y Android (`:androidApp:assembleDebug`). El APK de prueba se genera en `androidApp/build/outputs/apk/debug/`.
+
+En el equipo donde se preparó el proyecto, Android Studio está en la carpeta vecina `.tools/android-studio` y el SDK en `.android-sdk`. `local.properties` apunta al SDK y permanece fuera de Git para no imponer esa ruta a los demás integrantes.
 
 La base procede de la [plantilla oficial Kotlin Multiplatform](https://github.com/Kotlin/KMP-App-Template). El equipo conservará la atribución y licencia Apache 2.0 de la plantilla.
