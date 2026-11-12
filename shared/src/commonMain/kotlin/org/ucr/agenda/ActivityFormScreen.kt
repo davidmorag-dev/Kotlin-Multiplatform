@@ -42,26 +42,29 @@ fun ActivityFormScreen(onBack: () -> Unit, onSave: (ActivityDraft) -> Unit) {
 
             OutlinedTextField(
                 value = title,
-                onValueChange = { title = it },
+                onValueChange = { title = it; errors = errors.copy(title = null) },
                 label = { Text("Título") },
                 isError = errors.title != null,
+                supportingText = { errors.title?.let { Text(it) } },
                 singleLine = true,
                 modifier = Modifier.fillMaxWidth(),
             )
             OutlinedTextField(
                 value = date,
-                onValueChange = { date = it },
+                onValueChange = { date = it; errors = errors.copy(date = null) },
                 label = { Text("Fecha") },
                 placeholder = { Text("AAAA-MM-DD") },
                 isError = errors.date != null,
+                supportingText = { errors.date?.let { Text(it) } },
                 singleLine = true,
                 modifier = Modifier.fillMaxWidth(),
             )
             OutlinedTextField(
                 value = description,
-                onValueChange = { description = it },
+                onValueChange = { description = it; errors = errors.copy(description = null) },
                 label = { Text("Descripción") },
                 isError = errors.description != null,
+                supportingText = { errors.description?.let { Text(it) } },
                 minLines = 3,
                 modifier = Modifier.fillMaxWidth(),
             )
