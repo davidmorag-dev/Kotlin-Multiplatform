@@ -1,41 +1,18 @@
-# Kotlin Multiplatform — estructura inicial
+# Agenda de actividades
 
-Proyecto del equipo de Desarrollo de Software IV, Universidad de Costa Rica, Sede del Pacífico.
+Proyecto de Desarrollo de Software IV de David Mora Gómez, Herlin Fabian Chavarria Beita y Vladimir Sancho Venegas (UCR, Sede del Pacífico).
 
-**Integrantes:** David Mora Gómez, Herlin Fabian Chavarria Beita y Vladimir Sancho Venegas.
+La app permite ver y agregar actividades con título, fecha y descripción. Revisa los datos antes de guardar y muestra la actividad nueva en la lista. Por ahora todo queda en memoria: al cerrar la app, se reinicia.
 
-Esta rama contiene únicamente la base del proyecto. La aplicación de agenda completa se conserva por separado en la carpeta `Codigo Kotlin completo` del Escritorio como referencia. Las funcionalidades se incorporarán mediante las ramas `David`, `Herlin` y `Vladimir`.
+## Para probarla
 
-## Módulos
-
-| Carpeta | Propósito |
-| --- | --- |
-| `shared` | Código y futura interfaz compartidos; contiene una pantalla de arranque mínima. |
-| `androidApp` | Entrada y recursos de Android. |
-| `desktopApp` | Entrada de escritorio. |
-| `webApp` | Entrada web. |
-| `iosApp` | Proyecto de iOS para abrir en macOS con Xcode. |
-
-En `shared/src/commonMain/kotlin/org/ucr/agenda` están preparadas las carpetas `model`, `data`, `validation`, `ui/screens` y `ui/navigation`. `shared/src/commonTest` queda reservado para pruebas.
-
-## Entorno
-
-- JDK 21.
-- Gradle Wrapper incluido; descarga Gradle y las dependencias Kotlin/Compose al compilar.
-- Para Android: SDK Platform 37.0, Build Tools y Platform Tools. El SDK puede ubicarse fuera del repositorio y apuntarse desde `local.properties` con `sdk.dir`.
-- Para iOS: macOS y Xcode. No se requiere para la demostración en Windows.
-
-## Comprobación inicial
-
-En Windows, con JDK 21 seleccionado:
+Necesitas JDK 21. En Windows, desde la carpeta del proyecto:
 
 ```powershell
-.\gradlew.bat :shared:compileKotlinJvm :desktopApp:compileKotlin
-.\gradlew.bat :androidApp:assembleDebug
+.\gradlew.bat :shared:jvmTest
+.\gradlew.bat :desktopApp:run
 ```
 
-La estructura inicial compiló el 7 de noviembre de 2026 para JVM/escritorio, web (`:webApp:compileKotlinJs`) y Android (`:androidApp:assembleDebug`). El APK de prueba se genera en `androidApp/build/outputs/apk/debug/`.
+Para Android hace falta el SDK 37 y configurar su ruta en `local.properties` (`sdk.dir=C:/ruta/al/Android/Sdk`). Luego puedes generar el APK con `.\gradlew.bat :androidApp:assembleDebug`. Para web usa `.\gradlew.bat :webApp:wasmJsBrowserDevelopmentRun`. iOS requiere una Mac con Xcode.
 
-En el equipo donde se preparó el proyecto, Android Studio está en `%LOCALAPPDATA%/KotlinMultiplatform/tools/android-studio` y el SDK en `%LOCALAPPDATA%/KotlinMultiplatform/android-sdk`. `local.properties` apunta al SDK y permanece fuera de Git para no imponer esa ruta a los demás integrantes.
-
-La base procede de la [plantilla oficial Kotlin Multiplatform](https://github.com/Kotlin/KMP-App-Template). El equipo conservará la atribución y licencia Apache 2.0 de la plantilla.
+La base del proyecto viene de la [plantilla oficial de Kotlin Multiplatform](https://github.com/Kotlin/KMP-App-Template); su licencia Apache 2.0 está en `LICENSE`.
