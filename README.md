@@ -26,6 +26,11 @@ Desde la carpeta raíz del proyecto, en una terminal de Windows con JDK 21:
 
 # Ejecutar la versión web con Kotlin/Wasm en el navegador
 .\gradlew.bat :webApp:wasmJsBrowserDevelopmentRun
+
+#Extra terminal linux por si acaso
+sed -i 's/\r$//' gradlew
+chmod +x gradlew
+./gradlew :webApp:wasmJsBrowserDevelopmentRun
 ```
 
 El archivo APK generado para Android queda disponible en `androidApp/build/outputs/apk/debug/`.
